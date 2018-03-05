@@ -30,9 +30,9 @@ class TweetCell: UITableViewCell {
             refreshData()
             APIManager.shared.untweet(tweet) { (tweet: Tweet?, error: Error?) in
                 if let  error = error {
-                    print("Error favoriting tweet: \(error.localizedDescription)")
+                    print("Error unret tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
-                    print("Successfully favorited the following Tweet: \n\(tweet.text)")
+                    print("Successfully unret the following Tweet: \n\(tweet.text)")
                 }
             }
         }
@@ -57,9 +57,9 @@ class TweetCell: UITableViewCell {
             refreshData()
             APIManager.shared.unfavorite(tweet) { (tweet: Tweet?, error: Error?) in
                 if let  error = error {
-                    print("Error favoriting tweet: \(error.localizedDescription)")
+                    print("Error unfav tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
-                    print("Successfully favorited the following Tweet: \n\(tweet.text)")
+                    print("Successfully unfav the following Tweet: \n\(tweet.text)")
                 }
             }
         }

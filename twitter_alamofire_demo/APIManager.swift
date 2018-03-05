@@ -129,6 +129,27 @@ class APIManager: SessionManager {
                 completion(nil, response.result.error)
             }
         }
+        
+//        let parameters = ["id": tweet.id]
+//
+//        let id : Int64 = tweet.id
+//        let idString = String(id)
+//        let baseURL = "https://api.twitter.com/1.1/favorites/create.json?id="
+//
+//        let url = baseURL + idString
+//        print(url)
+//
+//        request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { (response) in
+//            print("response: " + String(response.result.isSuccess))
+//            if response.result.isSuccess,
+//                let tweetDictionary = response.result.value as? [String: Any] {
+//                let tweet = Tweet(dictionary: tweetDictionary)
+//                completion(tweet, nil)
+//            } else {
+//                print("There was an error")
+//                completion(nil, response.result.error)
+//            }
+//        }
     }
     func unfavorite(_ tweet: Tweet, completion: @escaping (Tweet?, Error?) -> ()) {
         let urlString = "https://api.twitter.com/1.1/favorites/destroy.json"
@@ -144,9 +165,12 @@ class APIManager: SessionManager {
         }
     }
     func retweet(_ tweet: Tweet, completion: @escaping (Tweet?, Error?) -> ()) {
-        let urlString = "https://api.twitter.com/1.1/statuses/retweet/:id.json"
+        let urlString = "https://api.twitter.com/1.1/statuses/retweet/"
+        let end = ".json"
         let parameters = ["id": tweet.id]
-        request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
+        let id = String(tweet.id)
+        let url = urlString + id + end
+        request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
             if response.result.isSuccess,
                 let tweetDictionary = response.result.value as? [String: Any] {
                 let tweet = Tweet(dictionary: tweetDictionary)
@@ -157,9 +181,12 @@ class APIManager: SessionManager {
         }
     }
     func untweet(_ tweet: Tweet, completion: @escaping (Tweet?, Error?) -> ()) {
-        let urlString = "https://api.twitter.com/1.1/statuses/unretweet/:id.json"
+        let urlString = "https://api.twitter.com/1.1/statuses/unretweet/"
+        let end = ".json"
         let parameters = ["id": tweet.id]
-        request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
+        let id = String(tweet.id)
+        let url = urlString + id + end
+        request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
             if response.result.isSuccess,
                 let tweetDictionary = response.result.value as? [String: Any] {
                 let tweet = Tweet(dictionary: tweetDictionary)
