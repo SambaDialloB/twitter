@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,8 +26,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = loginVC
         }
         
+        // check if user is logged in.
+        if User.current != nil {
+            // if there is a logged in user then load the home view controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let TabbarViewController = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+            window?.rootViewController = TabbarViewController
+        }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            window?.rootViewController = login
+        }
         return true
+
     }
+   
     
     // MARK: TODO: Open URL
     // OAuth step 2

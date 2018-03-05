@@ -19,6 +19,8 @@ class Tweet {
     var retweeted: Bool // Configure retweet button
     var user: User // Contains name, screenname, etc. of tweet author
     var createdAtString: String // Display date
+    // For Retweets
+    var retweetedByUser: User?  // user who retweeted if tweet is retweet
     
     // MARK: - Create initializer with dictionary
     init(dictionary: [String: Any]) {
@@ -45,6 +47,11 @@ class Tweet {
         createdAtString = formatter.string(from: date)
         
         
+    }
+    static func tweets(with array: [[String: Any]]) -> [Tweet] {
+        return array.flatMap({ (dictionary) -> Tweet in
+            Tweet(dictionary: dictionary)
+        })
     }
 }
 
