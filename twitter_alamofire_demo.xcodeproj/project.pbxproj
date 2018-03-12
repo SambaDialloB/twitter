@@ -13,6 +13,8 @@
 		A2194D292050AAF200F06622 /* topTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2194D282050AAF200F06622 /* topTableViewCell.swift */; };
 		A2194D2B2050AB2500F06622 /* middleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2194D2A2050AB2500F06622 /* middleTableViewCell.swift */; };
 		A2194D2D2050AB3000F06622 /* bottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2194D2C2050AB3000F06622 /* bottomTableViewCell.swift */; };
+		A2194D2F2051B3A200F06622 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2194D2E2051B3A200F06622 /* ComposeView.swift */; };
+		A244AC4E20560A7F00380DD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A244AC4D20560A7F00380DD8 /* ProfileViewController.swift */; };
 		ED1AFD311E942B2500FD4B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1AFD301E942B2500FD4B90 /* AppDelegate.swift */; };
 		ED1AFD361E942B2500FD4B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1AFD341E942B2500FD4B90 /* Main.storyboard */; };
 		ED1AFD381E942B2500FD4B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1AFD371E942B2500FD4B90 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		A2194D282050AAF200F06622 /* topTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topTableViewCell.swift; sourceTree = "<group>"; };
 		A2194D2A2050AB2500F06622 /* middleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middleTableViewCell.swift; sourceTree = "<group>"; };
 		A2194D2C2050AB3000F06622 /* bottomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomTableViewCell.swift; sourceTree = "<group>"; };
+		A2194D2E2051B3A200F06622 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
+		A244AC4D20560A7F00380DD8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AA8B2B7251F8A233C7185620 /* Pods-twitter_alamofire_demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demoUITests/Pods-twitter_alamofire_demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFBE91109514C5BA32FE14C3 /* Pods_twitter_alamofire_demoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_alamofire_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1AFD2D1E942B2500FD4B90 /* twitter_alamofire_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter_alamofire_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A2194D262050A20A00F06622 /* DetailViewController.swift */,
+				A244AC4D20560A7F00380DD8 /* ProfileViewController.swift */,
 				ED1AFD601E94496E00FD4B90 /* LoginViewController.swift */,
 				ED1D234B1EF6E42900C51ACC /* TimelineViewController.swift */,
 			);
@@ -214,6 +219,7 @@
 				A2194D2A2050AB2500F06622 /* middleTableViewCell.swift */,
 				A2194D2C2050AB3000F06622 /* bottomTableViewCell.swift */,
 				ED1D234D1EF71C4B00C51ACC /* TweetCell.swift */,
+				A2194D2E2051B3A200F06622 /* ComposeView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -544,6 +550,8 @@
 				ED1AFD5F1E94421000FD4B90 /* APIManager.swift in Sources */,
 				ED1AFD311E942B2500FD4B90 /* AppDelegate.swift in Sources */,
 				A2194D2D2050AB3000F06622 /* bottomTableViewCell.swift in Sources */,
+				A2194D2F2051B3A200F06622 /* ComposeView.swift in Sources */,
+				A244AC4E20560A7F00380DD8 /* ProfileViewController.swift in Sources */,
 				ED1D234C1EF6E42900C51ACC /* TimelineViewController.swift in Sources */,
 				A2194D272050A20A00F06622 /* DetailViewController.swift in Sources */,
 			);

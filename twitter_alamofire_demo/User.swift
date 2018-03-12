@@ -12,16 +12,26 @@ class User {
     
     // For user persistance
     var dictionary: [String: Any]?
-    var name: String
+    var name: String?
     var screenName: String?
-    var profilePicutreUrl: String
-    var coverPictureUrl: String?
+    var profilePicutreUrl: URL
+    var coverPictureUrl: URL
+    var desc : String
     private static var _current: User?
+    var num_fol: Int
+    var num_fi: Int
+    var num_tweets: Int
     init(dictionary: [String: Any]) {
         self.dictionary = dictionary
-        name = dictionary["name"] as! String
+        name = dictionary["name"] as? String
         screenName = "@" + (dictionary["screen_name"] as! String)
-        profilePicutreUrl = dictionary["profile_image_url_https"] as! String
+        profilePicutreUrl = URL(string: dictionary["profile_image_url_https"] as! String)!
+        coverPictureUrl = URL(string: dictionary["profile_banner_url"] as! String)!
+        num_fol = dictionary["followers_count"] as! Int
+        num_fi = dictionary["friends_count"] as! Int
+        desc = dictionary["description"] as! String
+        num_tweets = dictionary["statuses_count"] as! Int
+        
         
 
     }

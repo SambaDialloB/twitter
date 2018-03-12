@@ -13,7 +13,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     var tweets: [Tweet] = []
     
     @IBOutlet weak var tableView: UITableView!
-    
+    func did(post: Tweet) {
+        tweets.insert(post, at: 0)
+        tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +42,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        if let indexPath = tableView.indexPath(for: cell){
-            let tweet = tweets[indexPath.row]
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.tweet = [tweet]
+        if let vc = segue.destination as? DetailViewController{
+            let senderCell = sender as! TweetCell
+            let indexPath = tableView.indexPath(for: senderCell)
+            vc.tweet = [tweets[(indexPath?.row)!]]
         }
         
     }
@@ -80,6 +82,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

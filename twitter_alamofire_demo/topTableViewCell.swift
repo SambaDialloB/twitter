@@ -26,8 +26,7 @@ class topTableViewCell: UITableViewCell {
     }
     func refreshData(){
         tweetTextLabel.text = tweet.text
-        let url = URL(string: tweet.user.profilePicutreUrl)!
-        profView.af_setImage(withURL: url)
+        profView.af_setImage(withURL: tweet.user.profilePicutreUrl)
         username.text = tweet.user.name
         screenNamre.text = tweet.user.screenName
         time_stmp.text = tweet.createdAtString
